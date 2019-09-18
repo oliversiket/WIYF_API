@@ -21,6 +21,20 @@ $router->group(["prefix" => "recipes"], function ($router) {
     $router->get("{recipe}", "Recipes@show");
 });
 
+$router->group(["prefix" => "ingredients"], function ($router) {
+
+    $router->get("/", "Ingredients@index");
+
+    $router->get("/{ingredient}/recipes", "Ingredients@searchRecipe");
+
+    $router->get("/{ingredient}", "Ingredients@show");
+
+    // $router->get("/{ingredient}/{ingredient}/recipes", "Ingredients@searchTwoRecipe");
+
+
+    
+});
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

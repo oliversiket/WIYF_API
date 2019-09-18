@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Resources\RecipeListResource;
+use App\Ingredient;
+use App\Recipe;
 
 class Ingredients extends Controller
 {
@@ -13,7 +16,7 @@ class Ingredients extends Controller
      */
     public function index()
     {
-        //
+        return Ingredient::all();
     }
 
     /**
@@ -33,11 +36,22 @@ class Ingredients extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Ingredient $ingredient)
     {
-        //
+        return $ingredient;
+    }
+    public function searchRecipe(Ingredient $ingredient)
+    {
+        $orders = App\Recipe::search()->where('user_id', 1)->get();
+        
+        return $orders;
+        // return RecipeListResource::collection($ingredient->recipes);
     }
 
+    // public function searchTwoRecipe(Ingredient $ingredient)
+    // {
+    //     return RecipeListResource::collection($ingredient->recipes);
+    // }
     /**
      * Update the specified resource in storage.
      *
