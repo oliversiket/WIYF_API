@@ -29,7 +29,6 @@ class Ingredients extends Controller
     {
         //  
     }
-
     /**
      * Display the specified resource.
      *
@@ -40,18 +39,12 @@ class Ingredients extends Controller
     {
         return $ingredient;
     }
+
     public function searchRecipe(Ingredient $ingredient)
     {
-        $orders = App\Recipe::search()->where('user_id', 1)->get();
-        
-        return $orders;
-        // return RecipeListResource::collection($ingredient->recipes);
+        return RecipeListResource::collection($ingredient->recipes);
     }
 
-    // public function searchTwoRecipe(Ingredient $ingredient)
-    // {
-    //     return RecipeListResource::collection($ingredient->recipes);
-    // }
     /**
      * Update the specified resource in storage.
      *

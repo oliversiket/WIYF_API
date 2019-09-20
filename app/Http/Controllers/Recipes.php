@@ -39,6 +39,54 @@ class Recipes extends Controller
         return new RecipeResource($recipe);
 
     }
+    public function showRecipes($id1, $id2 = null, $id3 = null)
+    {
+        $numOfIngredients = $id3 ? 3 : ($id2 ? 2 : 1);
+
+        $recipes = RecipeResource::collection(Recipe::all());
+
+        $matches = [];
+
+        foreach($recipes as $recipe){
+
+            foreach($recipe->ingredients as $ingItem){
+                if($ingItem->id == $id1){
+                    if (isset($matches[$recipe->id])){
+                        $matches[$recipe->id] += 1;
+                    }else{
+                        $matches[$recipe->id] = 1;
+                    }
+                }
+                if($ingItem->id == $id2){
+                    if (isset($matches[$recipe->id])){
+                        $matches[$recipe->id] += 1;
+                    }else{
+                        $matches[$recipe->id] = 1;
+                    }
+                }
+                if($ingItem->id == $id3){
+                    if (isset($matches[$recipe->id])){
+                        $matches[$recipe->id] += 1;
+                    }else{
+                        $matches[$recipe->id] = 1;
+                    }
+                }
+            }
+        }
+     
+        arsort($matches);
+        $matchesKeys = array_keys($matches);
+
+        $result = $recipes->filter(function($recipe) use($matchesKeys, $matches, $numOfIngredients){
+
+            return in_array($recipe->id, $matchesKeys) && $matches[$recipe->id] === $numOfIngredients;
+
+        });
+        var_dump($result);
+        var_dump(empty($result));
+
+        return count($result) == 0 ? "No recipe found! Try different ingredients!" : $result;
+    }
 
     /**
      * Display the specified resource.

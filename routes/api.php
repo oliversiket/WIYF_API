@@ -19,6 +19,13 @@ $router->group(["prefix" => "recipes"], function ($router) {
     $router->post("/", "Recipes@store");
 
     $router->get("{recipe}", "Recipes@show");
+    
+    $router->get("/match/{id1}", "Recipes@showRecipes");
+
+    $router->get("/match/{id1}/{id2}", "Recipes@showRecipes");
+
+    $router->get("/match/{id1}/{id2}/{id3}", "Recipes@showRecipes");
+
 });
 
 $router->group(["prefix" => "ingredients"], function ($router) {
@@ -33,6 +40,15 @@ $router->group(["prefix" => "ingredients"], function ($router) {
 
 
     
+});
+Route::get('/search', function (Request $request) {
+
+    // $orders = App\Ingredient::search('Star Trek')->where('user_id', 1)->get();
+    $orders = App\Recipe::search('')->raw();
+    // $orders = App\Recipe::search('butter')
+    // ->within('recipes_index')
+    // ->get();
+    return $orders;
 });
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

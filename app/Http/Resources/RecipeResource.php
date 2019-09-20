@@ -19,6 +19,7 @@ class RecipeResource extends JsonResource
         $collection = collect($this->ingredients);
 
         return [
+            "id" => $this->id,
             "name" => $this->name,
             "description" => $this->description, 
             "prep_time" => $this->prep_time, 
@@ -31,6 +32,7 @@ class RecipeResource extends JsonResource
             "ingredients" => $collection->map(function ($item){
                
                 return array(
+                        "id" => $item->id,
                         "name" => $item->name,
                         "quantity" => $item->pivot->unit);
                 

@@ -104,6 +104,50 @@ class IngredientsTableSeeder extends Seeder
         DB::table('ingredients')->insert([
             'name' => 'golden syrup',
         ]);
-
+        DB::table('ingredients')->insert([
+            'name' => 'olive oil',
+        ]);
+        DB::table('ingredients')->insert([
+            'name' => 'sweet potato',
+        ]);
+        DB::table('ingredients')->insert([
+            'name' => 'new potato',
+        ]);
+        DB::table('ingredients')->insert([
+            'name' => 'red pepper',
+        ]);
+        DB::table('ingredients')->insert([
+            'name' => 'leek',
+        ]);
+        DB::table('ingredients')->insert([
+            'name' => 'peas',
+        ]);
+        DB::table('ingredients')->insert([
+            'name' => 'chilli',
+        ]);
+        DB::table('ingredients')->insert([
+            'name' => 'feta',
+        ]);
+        DB::table('ingredients')->insert([
+            'name' => 'eggs',
+        ]);
+        DB::table('ingredients')->insert([
+            'name' => 'seasalt',
+        ]);
+        DB::table('ingredients')->insert([
+            'name' => 'pasta',
+        ]);
+        DB::table('ingredients')->insert([
+            'name' => 'avocado',
+        ]);
+        DB::table('ingredients')->insert([
+            'name' => 'coconut oil',
+        ]);
+        DB::table('ingredients')->insert([
+            'name' => 'lemon',
+        ]);
+        DB::table('ingredients')->insert([
+            'name' => 'mint',
+        ]);
     }
 }

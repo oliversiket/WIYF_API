@@ -2,10 +2,13 @@
 
 namespace App;
 
+use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 
 class Ingredient extends Model
 {
+    use Searchable;
+
     public $timestamps = false; // don't need timestamps
     protected $fillable = ["name"]; // name should be fillable
 
@@ -13,7 +16,7 @@ class Ingredient extends Model
     {
         return $this->belongsToMany(Recipe::class)->withPivot('unit');
     }
-
+    
     public static function parse(array $ingredients)
     {
         // turns into a collection and maps over
@@ -31,5 +34,10 @@ class Ingredient extends Model
 
         // if tag exists return it, otherwise create a new one
         return $exists ? $exists : Ingredient::create(["name" => $string]);
+    }
+
+    public function searchableAs()
+    {
+        return 'ingredients_index';
     }
 }

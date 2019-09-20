@@ -191,6 +191,112 @@ class IngredientRecipeTableSeeder extends Seeder
             'ingredient_id' => '31',
             'unit' => '2-3 tablespoon'
         ]);
+        DB::table('ingredient_recipe')->insert([
+            'recipe_id' => '7',
+            'ingredient_id' => '32',
+            'unit' => '2 tablespoon'
+        ]);
+        DB::table('ingredient_recipe')->insert([
+            'recipe_id' => '7',
+            'ingredient_id' => '33',
+            'unit' => '100 grams'
+        ]);
+        DB::table('ingredient_recipe')->insert([
+            'recipe_id' => '7',
+            'ingredient_id' => '34',
+            'unit' => '175 grams'
+        ]);
+        DB::table('ingredient_recipe')->insert([
+            'recipe_id' => '7',
+            'ingredient_id' => '14',
+            'unit' => '100 grams'
+        ]);
+        DB::table('ingredient_recipe')->insert([
+            'recipe_id' => '7',
+            'ingredient_id' => '35',
+            'unit' => 'half'
+        ]);
+        DB::table('ingredient_recipe')->insert([
+            'recipe_id' => '7',
+            'ingredient_id' => '36',
+            'unit' => '1 piece'
+        ]);
+        DB::table('ingredient_recipe')->insert([
+            'recipe_id' => '7',
+            'ingredient_id' => '37',
+            'unit' => '50 grams frozen'
+        ]);
+        DB::table('ingredient_recipe')->insert([
+            'recipe_id' => '7',
+            'ingredient_id' => '38',
+            'unit' => 'red and green'
+        ]);
+        DB::table('ingredient_recipe')->insert([
+            'recipe_id' => '7',
+            'ingredient_id' => '39',
+            'unit' => '100 grams'
+        ]);
+        DB::table('ingredient_recipe')->insert([
+            'recipe_id' => '7',
+            'ingredient_id' => '40',
+            'unit' => '6 large free-range'
+        ]);
+        DB::table('ingredient_recipe')->insert([
+            'recipe_id' => '7',
+            'ingredient_id' => '41',
+            'unit' => 'pinch of'
+        ]);
+        DB::table('ingredient_recipe')->insert([
+            'recipe_id' => '7',
+            'ingredient_id' => '3',
+            'unit' => 'green with leaves'
+        ]);
+        DB::table('ingredient_recipe')->insert([
+            'recipe_id' => '8',
+            'ingredient_id' => '42',
+            'unit' => '375 grams'
+        ]);
+        DB::table('ingredient_recipe')->insert([
+            'recipe_id' => '8',
+            'ingredient_id' => '43',
+            'unit' => '1 large'
+        ]);
+        DB::table('ingredient_recipe')->insert([
+            'recipe_id' => '8',
+            'ingredient_id' => '44',
+            'unit' => '2 tablespoon'
+        ]);
+        DB::table('ingredient_recipe')->insert([
+            'recipe_id' => '8',
+            'ingredient_id' => '7',
+            'unit' => '2 cloves'
+        ]);
+        DB::table('ingredient_recipe')->insert([
+            'recipe_id' => '8',
+            'ingredient_id' => '41',
+            'unit' => 'half teaspoon'
+        ]);
+        DB::table('ingredient_recipe')->insert([
+            'recipe_id' => '8',
+            'ingredient_id' => '45',
+            'unit' => '1 piece'
+        ]);
+        DB::table('ingredient_recipe')->insert([
+            'recipe_id' => '8',
+            'ingredient_id' => '46',
+            'unit' => '6 fresh leaves'
+        ]);
+        DB::table('ingredient_recipe')->insert([
+            'recipe_id' => '8',
+            'ingredient_id' => '37',
+            'unit' => '150 grams fresh'
+        ]);
+        DB::table('ingredient_recipe')->insert([
+            'recipe_id' => '8',
+            'ingredient_id' => '38',
+            'unit' => '1 large red'
+        ]);
+        
 
 
     }

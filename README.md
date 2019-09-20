@@ -8,7 +8,7 @@ First you need to clone our repository:
 git clone git@github.com:oliversiket/WIYF_API.git
 ```
 
-Change directory to the project folder
+Change directory to the project folder:
 
 ```
 cd WIYF_API/
@@ -61,6 +61,11 @@ Use artisan to generate a key:
 ```
 artisan key:generate
 ```
+Let's regenerate the list of all classes in order to run artisan commands properly:
+```
+composer dump-autoload
+```
+
 Now you can create your database structure:
 ```
 artisan migrate

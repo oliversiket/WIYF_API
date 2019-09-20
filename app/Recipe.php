@@ -2,12 +2,15 @@
 
 namespace App;
 
+use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use App\Ingredient;
 
 class Recipe extends Model
 {
+    use Searchable;
+
     protected $fillable = ['name', 'description', 'category', 'prep_time', 'method', 'num_servings', 'img_url', 'img_alt'];
 
     public function ingredients()
@@ -22,6 +25,10 @@ class Recipe extends Model
         $this->ingredients()->sync($ingredients->pluck("id")->all());
 
         return $this;
+    }
+    public function searchableAs()
+    {
+        return 'recipes_index';
     }
     // relationship to ingredients
 
