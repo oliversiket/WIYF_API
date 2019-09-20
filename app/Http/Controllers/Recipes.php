@@ -82,8 +82,6 @@ class Recipes extends Controller
             return in_array($recipe->id, $matchesKeys) && $matches[$recipe->id] === $numOfIngredients;
 
         });
-        var_dump($result);
-        var_dump(empty($result));
 
         return count($result) == 0 ? "No recipe found! Try different ingredients!" : $result;
     }
